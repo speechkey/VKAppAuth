@@ -15,6 +15,7 @@ setup(
     keywords='vkontakte vk api access_token oauth oauth2',
     long_description=read('README.rst') + read('CHANGES.rst'),
     url='https://github.com/speechkey/vkappauth',
+    download_url='https://github.com/speechkey/VKAppAuth/tarball/0.0.1',
     author='Artem Grebenkin',
     author_email='artem.grebenkin@gmail.com',
     include_package_data=True,
