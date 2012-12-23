@@ -1,36 +1,50 @@
 VKAppAuth
+=========
+
+There is a wondeful `vk.com (aka vkontakte.ru) API wrapper <https://github.com/shazow/urllib3/blob/master/test/benchmark.py>`_. But
+if you would like to use it, you neet that your vk.com user authorize your
+application and gives it all required rights, bevor you obtain an access
+token and can make this wonderfull vk.com API wrapper usefull. VKAppAuth
+module gives you functionality to very easy get this access token.
+
+Install
+=======
+
+Checkout this repository or download an archive and run::
+
+  python setup.py install
+
+Install with pip::
+
+  pip install vkappauth
+
+Usage
 =====
 
-Python package for authorize a VK application and get access_token for `vk api <http://vk.com/developers.php>`_.
-Based on `dzhloev <http://habrahabr.ru/post/143972/>`_ 
+>>> from vkappauth import VKAppAuth
+>>> vkaa = VKAppAuth()
+>>> email = 'example@example.com'
+>>> password = 'password'
+>>> app_id = 123456
+>>> scope = 'audio'
+>>> scope = ['audio', 'offline']
+>>> access_data = vkaa.auth(email, password, app_id, scope)
+>>> print access_data
+{'access_token': '41c5105ae83edc2a07896d62ed11f0b31f79f70ec1e657da65d32e497557665a33ab063b97d456530fe65', 'expires_in': '86400', 'user_id': '104184112'}
 
-Installation
-------------
+License
+=======
 
-You can install from PyPI::
+The MIT License (MIT)
+Copyright (c) 2012 Artem Grebenkin
 
-    $ pip install VKAppAuth==0.0.1
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-Example Of Usage
-----------------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Add a `standalone VK application <http://vk.com/editapp?act=create>`_. Also keep in mind `VK development guide <https://vk.com/developers.php?id=-1_37230422&s=1>`_.
+Source
+======
 
-Now you can use VKAppAuth::
-
-    >>> from VKAppAuth import VKAppAuth
-    >>> login = 'email@example.com'
-    >>> pwd = 'password'
-    >>> app_id = 123456789
-    >>> scopes = ['wall', 'friends']
-    >>> scopes = 'wall'
-    >>> vk_app_auth = VKAppAuth()
-    >>> token = vk_app_auth.auth(login, pwd, app_id, scopes)
-    >>> access_token = token.access_token
-    >>> user_id = token.user_id
-    >>> expires_in = token.expires_in
-
-or a vkappauth script.
-
-After receiving access_token you can be using `vkontakte package <https://crate.io/packages/vkontakte/>`_
+Based on post `dzhloev <https://github.com/shazow/urllib3/blob/master/test/benchmark.py>`_.
