@@ -2,10 +2,10 @@ VKAppAuth
 =========
 
 There is a wondeful `vk.com (aka vkontakte.ru) API wrapper <https://github.com/shazow/urllib3/blob/master/test/benchmark.py>`_. But
-if you would like to use it, you neet that your vk.com user authorize your
-application and gives it all required rights, bevor you obtain an access
-token and can make this wonderfull vk.com API wrapper usefull. VKAppAuth
-module gives you functionality to very easy get this access token.
+if you would like to use it, you need that your vk.com user to authorize your
+application and gives it all required rights, before you obtain an access
+token and can make this wonderful vk.com API wrapper useful. VKAppAuth
+module gives you functionality to very easy get an application access token.
 
 Install
 =======
